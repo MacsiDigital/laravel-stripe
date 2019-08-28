@@ -4,7 +4,7 @@ namespace MacsiDigital\Stripe\Support;
 
 use Illuminate\Support\Collection;
 
-class Query
+class OldQuery
 {
 	protected $model;
 

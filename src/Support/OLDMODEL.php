@@ -5,7 +5,7 @@ namespace MacsiDigital\Stripe\Support;
 use BadMethodCallException;
 use MacsiDigital\Stripe\Support\Query;
 
-abstract class Model
+abstract class OldModel
 {
 	public $isStripeObject = true;
 

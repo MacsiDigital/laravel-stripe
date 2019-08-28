@@ -2,7 +2,7 @@
 
 namespace MacsiDigital\Stripe\Exceptions;
 
-class ValidationFailedException extends Base
+class ModelNotSetException extends Base
 {
 	
 }

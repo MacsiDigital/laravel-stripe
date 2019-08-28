@@ -14,7 +14,7 @@ class PaymentMethod extends StripeModel
 
 	protected $allowedMethods = ['get', 'find', 'insert', 'update'];
 
-	public $relationships = [
+	public $oneRelationships = [
 		'billing_detail' => BillingDetail::class,
 		'card' => Card::class,
 		'card_present' => CardPresent::class
