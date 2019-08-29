@@ -17,7 +17,7 @@
     "require": {
         "php": "^7.1",
         "nesbot/carbon": "^2.0",
-        "stripe/stripe-php": "^6.40",
+        "stripe/stripe-php": "^6.43",
         "illuminate/support": "~5.8.0|^6.0|^7.0"
     },
     "require-dev": {
