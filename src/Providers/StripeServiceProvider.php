@@ -42,7 +42,7 @@ class StripeServiceProvider extends ServiceProvider
         $this->app->bind(StripeAPIContract::class, StripeAPI::class);
         $this->app->bind(BuilderContract::class, Builder::class);
 
-        $this->app->bind('stripe-builder', Builder::class);
+        $this->app->bind('stripe.builder', Builder::class);
         
         $this->app->bind(Builder::class, function () {
             return new Builder(new StripeAPI);

@@ -37,6 +37,10 @@ Everything has been setup to be similar to Laravel syntax.
 
 At present there is no PHP Unit Testing, but we plan to add it in the future.
 
+## Todo
+
+- [ ] Tests, tests, tests
+
 ### Changelog
 
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.

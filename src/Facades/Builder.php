@@ -8,6 +8,6 @@ class Builder extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return 'stripe-builder';
+        return 'stripe.builder';
     }
 }
