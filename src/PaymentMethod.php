@@ -14,8 +14,26 @@ class PaymentMethod extends StripeModel
 
 	protected $allowedMethods = ['get', 'find', 'insert', 'update'];
 
+	public $insertAttributes = [
+		'type',
+		'card',
+		'billing_details',
+		'metadata'
+	];
+
+	public $updateAttributes = [
+		'card',
+		'billing_details',
+		'metadata'
+	];
+
+	public $requiredAttributes = [
+		'type',
+		'card'
+	];
+
 	public $oneRelationships = [
-		'billing_detail' => BillingDetail::class,
+		'billing_details' => BillingDetail::class,
 		'card' => Card::class,
 		'card_present' => CardPresent::class
 	];
@@ -23,10 +41,6 @@ class PaymentMethod extends StripeModel
 	public $queryAttributes = [
 		'customer' => ['='],
 		'type' => ['='],
-	];
-
-	public $requiredAttributes = [
-		'type'
 	];
 
 	public $requiredQueryAttributes = [
