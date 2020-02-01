@@ -6,13 +6,15 @@ use Exception;
 use Illuminate\Support\Collection;
 use MacsiDigital\Stripe\Support\API;
 use MacsiDigital\Stripe\Facades\Builder;
-use MacsiDigital\Stripe\Contracts\Builder as BuilderInterface;
+use Illuminate\Contracts\Support\Jsonable;
+use Illuminate\Contracts\Support\Arrayable;
 use MacsiDigital\Stripe\Traits\ForwardsCalls;
 use MacsiDigital\Stripe\Traits\HasAttributes;
 use MacsiDigital\Stripe\Traits\HasRelationships;
 use MacsiDigital\Stripe\Traits\InteractsWithAPI;
+use MacsiDigital\Stripe\Contracts\Builder as BuilderInterface;
 
-abstract class Model
+abstract class Model implements Arrayable, Jsonable
 {
 	 use HasAttributes,
          InteractsWithAPI,

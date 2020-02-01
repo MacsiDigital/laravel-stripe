@@ -2,10 +2,12 @@
 
 namespace MacsiDigital\Stripe\Support;
 
+use Illuminate\Contracts\Support\Jsonable;
+use Illuminate\Contracts\Support\Arrayable;
 use MacsiDigital\Stripe\Traits\HasAttributes;
 use MacsiDigital\Stripe\Traits\HasRelationships;
 
-abstract class ExtendedModel
+abstract class ExtendedModel implements Arrayable, Jsonable
 {
 	use HasAttributes,
         HasRelationships 
