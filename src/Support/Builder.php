@@ -209,8 +209,7 @@ class Builder implements Contract
      */
     protected function invalidOperator($operator)
     {
-        return ! in_array(strtolower($operator), $this->operators, true) &&
-               ! in_array(strtolower($operator), $this->grammar->getOperators(), true);
+        return ! in_array(strtolower($operator), $this->operators, true);
     }
 
      /**
