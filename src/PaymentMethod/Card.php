@@ -25,4 +25,16 @@ class Card extends StripeExtendedModel
 		'checks' => CardChecks::class
 	];
 
+	public $insertAttributes = [
+		'number',
+		'exp_month',
+		'exp_year',
+		'cvc'
+	];
+
+	public $updateAttributes = [
+		'exp_month',
+		'exp_year',
+	];
+
 }

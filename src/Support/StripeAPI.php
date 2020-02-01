@@ -82,6 +82,7 @@ class StripeAPI implements Contract
     public function insert(array $attributes)
     {
     	$this->modelCheck();
+        $attributes = $this->flattenAttributes($attributes);
         $object = $this->model::create($attributes);
         return array_merge($object->jsonSerialize(), ['StripeObject' => $object]);
     }
@@ -95,6 +96,7 @@ class StripeAPI implements Contract
     public function update($id, array $attributes)
     {
     	$this->modelCheck();
+        $attributes = $this->flattenAttributes($attributes);
         $object = $this->model::update($id, $attributes);
         return array_merge($object->jsonSerialize(), ['StripeObject' => $object]);
     }
@@ -147,6 +149,21 @@ class StripeAPI implements Contract
 			$options['starting_after'] = $pagination->starting_after;	
 		}
 		return $options;
+	}
+
+	public function flattenAttributes($attributes)
+	{
+		$return_attributes = [];
+		foreach($attributes as $key => $attribute){
+			if(is_array($attribute)){
+				$return_attributes[$key] = $this->flattenAttributes($attribute);
+			} else if(is_object($attribute)){
+				$return_attributes[$key] = $this->flattenAttributes($attribute->getAttributes());
+			} else {
+				$return_attributes[$key] = $attribute;
+			}
+		}
+		return $return_attributes;
 	}
 
 }
