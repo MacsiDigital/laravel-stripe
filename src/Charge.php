@@ -62,6 +62,15 @@ class Charge extends StripeModel
 	// 	"transfer_data" => [],
 	// 	"transfer_group" => '',
 	// ];
+	 
+	public $insertAttributes = [
+		'receipt_email',
+        'description',
+        'customer',
+        'amount',
+        'currency',
+        'metadata'
+	];
 
 	public $queryAttributes = [
 		'created' => ['<', '<=', '>=', '>'],
